@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     tools:context=".BottomNavigationFragment">
 
     <TextView
@@ -10,14 +11,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
         android:text="Bottom navigation fragment"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/full_screen_fragment_1_navigation_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="20dp"
-        android:text="Go to Full Screen Fragment 1" />
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/white"
+        android:text="Go to Full Screen Fragment 1"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 </FrameLayout>
