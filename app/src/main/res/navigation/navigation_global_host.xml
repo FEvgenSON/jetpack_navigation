@@ -10,7 +10,11 @@
 
         <action
             android:id="@+id/bottom_navigation_fragment_to_full_screen_fragment_1"
-            app:destination="@id/full_screen_fragment_1" />
+            app:destination="@id/full_screen_fragment_1"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/zoom_out"
+            app:popEnterAnim="@anim/zoom_in"
+            app:popExitAnim="@anim/slide_out_to_left" />
     </fragment>
 
     <fragment
