@@ -19,5 +19,13 @@
 
     <fragment
         android:id="@+id/full_screen_fragment_1"
-        android:name="com.example.jetpacknaviagtion.FullScreen1Fragment" />
+        android:name="com.example.jetpacknaviagtion.FullScreen1Fragment">
+
+        <action
+            android:id="@+id/full_screen_fragment_1_to_full_screen_fragment_1"
+            app:destination="@id/full_screen_fragment_1"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/full_screen_fragment_1"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

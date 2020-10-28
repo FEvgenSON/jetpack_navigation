@@ -7,10 +7,10 @@
     tools:context=".BottomNavigationFragment">
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:text="Bottom navigation fragment"
         android:textColor="@color/white"
         android:textSize="20sp" />
 
