@@ -21,6 +21,10 @@
         android:id="@+id/full_screen_fragment_1"
         android:name="com.example.jetpacknaviagtion.FullScreen1Fragment">
 
+        <argument
+            android:name="prevFragmentData"
+            app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+
         <action
             android:id="@+id/full_screen_fragment_1_to_full_screen_fragment_1"
             app:destination="@id/full_screen_fragment_1"

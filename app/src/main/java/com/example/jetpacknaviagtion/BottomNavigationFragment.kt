@@ -20,9 +20,24 @@ class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        text.text = "BottomNavigationFragment, instance number $localInstanceNumber"
+        val backStackResult =
+            findNavController().currentBackStackEntry?.savedStateHandle?.get<FullScreenArg>("prevArg")
+        findNavController().currentBackStackEntry?.savedStateHandle?.remove<FullScreenArg>("prevArg")
+
+        var instanceText = "BottomNavigationFragment, instance number $localInstanceNumber"
+        backStackResult?.let {
+            instanceText += "\nPrev: ${it.prevClass} ${it.prevInstanceNumber}"
+        }
+        text.text = instanceText
         full_screen_fragment_1_navigation_button.setOnClickListener {
-            findNavController().navigate(R.id.bottom_navigation_fragment_to_full_screen_fragment_1)
+            val action =
+                BottomNavigationFragmentDirections.bottomNavigationFragmentToFullScreenFragment1(
+                    FullScreenArg(
+                        prevClass = "BottomNavigationFragment",
+                        prevInstanceNumber = localInstanceNumber
+                    )
+                )
+            findNavController().navigate(action)
         }
     }
 }
