@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_global_host"
+    app:startDestination="@id/bottom_navigation_fragment">
+
+    <fragment
+        android:id="@+id/bottom_navigation_fragment"
+        android:name="com.example.jetpacknaviagtion.BottomNavigationFragment">
+
+        <action
+            android:id="@+id/bottom_navigation_fragment_to_full_screen_fragment_1"
+            app:destination="@id/full_screen_fragment_1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/full_screen_fragment_1"
+        android:name="com.example.jetpacknaviagtion.FullScreen1Fragment" />
+</navigation>
