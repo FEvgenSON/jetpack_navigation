@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_full_screen"
+    app:startDestination="@id/full_screen_fragment_1">
+
+    <fragment
+        android:id="@+id/full_screen_fragment_1"
+        android:name="com.example.jetpacknaviagtion.FullScreen1Fragment">
+
+        <argument
+            android:name="prevFragmentData"
+            app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+
+        <action
+            android:id="@+id/full_screen_fragment_1_to_full_screen_fragment_1"
+            app:destination="@id/full_screen_fragment_1"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/full_screen_fragment_1"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_full_screen_fragment_1_to_fullScreenFragment2"
+            app:destination="@id/fullScreenFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullScreenFragment2"
+        android:name="com.example.jetpacknaviagtion.FullScreenFragment2">
+
+        <argument
+            android:name="prevFragmentData"
+            app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+
+        <action
+            android:id="@+id/full_screen_fragment_2_to_bottom_navigation_fragment"
+            app:destination="@id/navigation_global_host"
+            app:popUpTo="@id/navigation_global_host"
+            app:popUpToInclusive="true">
+
+            <argument
+                android:name="prevFragmentData"
+                app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+        </action>
+    </fragment>
+</navigation>
