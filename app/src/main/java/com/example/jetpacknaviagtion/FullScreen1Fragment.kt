@@ -32,6 +32,7 @@ class FullScreen1Fragment : Fragment(R.layout.fragment_full_screen1) {
         text.text = "$currentInstance " +
                 "\nPrev: ${safeArgs.prevFragmentData.prevClass}" +
                 " ${safeArgs.prevFragmentData.prevInstanceNumber}"
+        //кнопки навигации
         full_screen_fragment_1_navigation_button.setOnClickListener {
             val action = FullScreen1FragmentDirections.fullScreenFragment1ToFullScreenFragment1(
                 FullScreenArg(
@@ -41,7 +42,17 @@ class FullScreen1Fragment : Fragment(R.layout.fragment_full_screen1) {
             )
             findNavController().navigate(action)
         }
-
+        full_screen_fragment_1_navigation_button2.setOnClickListener {
+            val action =
+                FullScreen1FragmentDirections.actionFullScreenFragment1ToFullScreenFragment2(
+                    FullScreenArg(
+                        prevClass = "FullScreen1Fragment",
+                        prevInstanceNumber = localInstanceNumber
+                    )
+                )
+            findNavController().navigate(action)
+        }
+        //кнопка назад
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             findNavController().previousBackStackEntry?.savedStateHandle?.apply {
                 set(

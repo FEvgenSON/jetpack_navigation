@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_bottom_navigation.*
 
 class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
@@ -22,6 +23,7 @@ class BottomNavigationFragment : Fragment(R.layout.fragment_bottom_navigation) {
         super.onViewCreated(view, savedInstanceState)
         val backStackResult =
             findNavController().currentBackStackEntry?.savedStateHandle?.get<FullScreenArg>("prevArg")
+                ?: navArgs<BottomNavigationFragmentArgs>().value.prevFragmentData
         findNavController().currentBackStackEntry?.savedStateHandle?.remove<FullScreenArg>("prevArg")
 
         var instanceText = "BottomNavigationFragment, instance number $localInstanceNumber"
