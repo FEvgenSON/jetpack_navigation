@@ -29,9 +29,13 @@ class FullScreen1Fragment : Fragment(R.layout.fragment_full_screen1) {
         val safeArgs by navArgs<FullScreen1FragmentArgs>()
         val currentInstance = "FullScreen1Fragment, instance number $localInstanceNumber"
 
-        text.text = "$currentInstance " +
-                "\nPrev: ${safeArgs.prevFragmentData.prevClass}" +
-                " ${safeArgs.prevFragmentData.prevInstanceNumber}"
+        try {
+            text.text = "$currentInstance " +
+                    "\nPrev: ${safeArgs.prevFragmentData.prevClass}" +
+                    " ${safeArgs.prevFragmentData.prevInstanceNumber}"
+        } catch (throwable: Throwable) {
+            text.text = "${arguments?.getString("type")} ${arguments?.getString("event")}"
+        }
         //кнопки навигации
         full_screen_fragment_1_navigation_button.setOnClickListener {
             val action = FullScreen1FragmentDirections.fullScreenFragment1ToFullScreenFragment1(

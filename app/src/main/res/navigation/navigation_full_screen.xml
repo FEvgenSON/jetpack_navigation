@@ -8,6 +8,10 @@
         android:id="@+id/full_screen_fragment_1"
         android:name="com.example.jetpacknaviagtion.FullScreen1Fragment">
 
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="team.cft.ru/{type}/{event}" />
+
         <argument
             android:name="prevFragmentData"
             app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
