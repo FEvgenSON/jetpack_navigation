@@ -20,7 +20,7 @@ class BottomFragment : Fragment(R.layout.fragment_bottom) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        text.text = instanceNumber.toString()
+        text.text = localInstanceNumber.toString()
         full_screen_fragment_1_navigation_button.setOnClickListener {
             val action =
                 BottomNavigationFragmentDirections.bottomNavigationFragmentToFullScreenFragment1(

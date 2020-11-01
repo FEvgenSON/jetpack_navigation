@@ -15,29 +15,32 @@ class BottomNavigationNavigator(
     private val containerId: Int
 ) : FragmentNavigator(context, manager, containerId) {
 
-    private val backStack = mutableListOf<Destination>()
+    private companion object {
+        const val IDS = "IDS"
+        const val CLASS_NAMES = "CLASS_NAMES"
+    }
+
+    private val _backStack = mutableListOf<Destination>()
+    val backStack: List<Destination>
+        get() = _backStack
 
     override fun navigate(
         destination: Destination,
         args: Bundle?,
         navOptions: NavOptions?,
         navigatorExtras: Navigator.Extras?
-    ): NavDestination? {
-
-        navigate(destination, true)
-        return destination
-    }
+    ): NavDestination? = navigate(destination, true)
 
     override fun popBackStack(): Boolean {
-        backStack.removeLast()
-        navigate(backStack.last(), false)
+        _backStack.removeLast()
+        navigate(_backStack.last(), false)
         return true
     }
 
     private fun navigate(
         destination: Destination,
         addToBackStack: Boolean
-    ) {
+    ): Destination? {
         val destinationClassName = destination.className
         val destinationId = destination.id.toString()
         val transaction = manager.beginTransaction()
@@ -60,8 +63,41 @@ class BottomNavigationNavigator(
         transaction.setReorderingAllowed(true)
         transaction.commit()
 
-        if (addToBackStack) {
-            backStack.add(destination)
+        return when {
+            !addToBackStack -> null
+            _backStack.contains(destination) -> {
+                _backStack.remove(destination)
+                _backStack.add(destination)
+                null
+            }
+            else -> {
+                _backStack.add(destination)
+                destination
+            }
+        }
+    }
+
+    override fun onSaveState(): Bundle? {
+        return Bundle().apply {
+            putIntArray(IDS, backStack.map { it.id }.toIntArray())
+            putStringArray(CLASS_NAMES, backStack.map { it.className }.toTypedArray())
+        }
+    }
+
+    override fun onRestoreState(savedState: Bundle?) {
+        savedState?.let {
+            val ids = it.getIntArray(IDS) ?: return
+            val classNames = it.getStringArray(CLASS_NAMES) ?: return
+            _backStack.clear()
+            _backStack.addAll(
+                ids.zip(classNames) { id: Int, className: String ->
+                    Destination(this).apply {
+                        setClassName(className)
+                        setId(id)
+                    }
+
+                }
+            )
         }
     }
 }
