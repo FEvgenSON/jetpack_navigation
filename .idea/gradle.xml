@@ -13,6 +13,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bottom_fragment" />
+            <option value="$PROJECT_DIR$/bottom_host" />
+            <option value="$PROJECT_DIR$/navigaiton" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

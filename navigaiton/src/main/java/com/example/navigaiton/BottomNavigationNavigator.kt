@@ -1,4 +1,4 @@
-package com.example.jetpacknaviagtion
+package com.example.navigaiton
 
 import android.content.Context
 import android.os.Bundle

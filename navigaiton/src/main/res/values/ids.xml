@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="navigation_bottom" type="id"/>
+
+    <item name="global_host" type="id"/>
+    <item name="bottom_host_to_full_screen" type="id"/>
+</resources>

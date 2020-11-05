@@ -1,4 +1,4 @@
-package com.example.jetpacknaviagtion
+package com.example.bottom_fragment
 
 import android.os.Bundle
 import android.view.View
@@ -22,14 +22,14 @@ class BottomFragment : Fragment(R.layout.fragment_bottom) {
         super.onViewCreated(view, savedInstanceState)
         text.text = localInstanceNumber.toString()
         full_screen_fragment_1_navigation_button.setOnClickListener {
-            val action =
-                BottomNavigationFragmentDirections.bottomNavigationFragmentToFullScreenFragment1(
-                    FullScreenArg(
-                        prevClass = "BottomNavigationFragment",
-                        prevInstanceNumber = localInstanceNumber
-                    )
-                )
-            requireActivity().findNavController(R.id.global_host).navigate(action)
+//            val action =
+//                BottomNavigationFragmentDirections.bottomNavigationFragmentToFullScreenFragment1(
+//                    FullScreenArg(
+//                        prevClass = "BottomNavigationFragment",
+//                        prevInstanceNumber = localInstanceNumber
+//                    )
+//                )
+            requireActivity().findNavController(R.id.global_host).navigate(R.id.bottom_host_to_full_screen)
         }
     }
 }

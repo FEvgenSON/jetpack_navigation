@@ -1,2 +1,5 @@
+include ':bottom_fragment'
+include ':navigaiton'
+include ':bottom_host'
 include ':app'
 rootProject.name = "Jetpack Naviagtion"

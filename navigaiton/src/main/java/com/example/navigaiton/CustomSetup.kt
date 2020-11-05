@@ -1,4 +1,4 @@
-package com.example.jetpacknaviagtion
+package com.example.navigaiton
 
 import android.os.Bundle
 import androidx.navigation.NavController

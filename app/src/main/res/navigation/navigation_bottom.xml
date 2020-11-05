@@ -2,22 +2,22 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation_bottom"
+    android:id="@id/navigation_bottom"
     app:startDestination="@id/first">
 
     <BottomFragment
         android:id="@id/first"
-        android:name="com.example.jetpacknaviagtion.BottomFragment"
+        android:name="com.example.bottom_fragment.BottomFragment"
         android:label="fragment_bottom"
         tools:layout="@layout/fragment_bottom" />
     <BottomFragment
         android:id="@id/second"
-        android:name="com.example.jetpacknaviagtion.BottomFragment"
+        android:name="com.example.bottom_fragment.BottomFragment"
         android:label="fragment_bottom"
         tools:layout="@layout/fragment_bottom" />
     <BottomFragment
         android:id="@id/third"
-        android:name="com.example.jetpacknaviagtion.BottomFragment"
+        android:name="com.example.bottom_fragment.BottomFragment"
         android:label="fragment_bottom"
         tools:layout="@layout/fragment_bottom" />
 </navigation>
