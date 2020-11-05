@@ -1,10 +1,9 @@
-package com.example.jetpacknaviagtion
+package com.example.navigaiton
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
-@Parcelize
 data class FullScreenArg(
     val prevClass: String,
     val prevInstanceNumber: Int
-) : Parcelable
+) : Serializable

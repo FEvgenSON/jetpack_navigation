@@ -14,7 +14,7 @@
 
         <argument
             android:name="prevFragmentData"
-            app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+            app:argType="com.example.navigaiton.FullScreenArg" />
 
         <action
             android:id="@+id/full_screen_fragment_1_to_full_screen_fragment_1"
@@ -34,7 +34,7 @@
 
         <argument
             android:name="prevFragmentData"
-            app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+            app:argType="com.example.navigaiton.FullScreenArg" />
 
         <action
             android:id="@+id/full_screen_fragment_2_to_bottom_navigation_fragment"
@@ -44,7 +44,7 @@
 
             <argument
                 android:name="prevFragmentData"
-                app:argType="com.example.jetpacknaviagtion.FullScreenArg" />
+                app:argType="com.example.navigaiton.FullScreenArg" />
         </action>
     </fragment>
 </navigation>

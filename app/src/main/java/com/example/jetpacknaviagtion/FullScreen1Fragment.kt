@@ -7,6 +7,7 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.navigaiton.FullScreenArg
 import kotlinx.android.synthetic.main.fragment_full_screen1.*
 
 class FullScreen1Fragment : Fragment(R.layout.fragment_full_screen1) {

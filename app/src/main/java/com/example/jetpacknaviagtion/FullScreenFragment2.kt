@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.navigaiton.FullScreenArg
 import kotlinx.android.synthetic.main.fragment_full_screen2.*
 
 class FullScreenFragment2 : Fragment(R.layout.fragment_full_screen2){
